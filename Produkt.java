@@ -1,16 +1,60 @@
 public class Produkt {
-    int id; //identyfikator klienta
-    String nazwa; //nazwa produktu
-    String kategoria; //kategoria produktu
-    double cena; //cena produktu
-    int iloscWMagazynie; //dostepna ilosc produktu w magazynie
-    public Produkt(int id, int iloscWMagazynie, String nazwa, String kategoria, double cena) {
+    private int id; //identyfikator klienta
+    private String nazwa; //nazwa produktu
+    private String kategoria; //kategoria produktu
+    private double cena; //cena produktu
+    private int iloscWMagazynie; //dostepna ilosc produktu w magazynie
+
+    public Produkt(int id, String nazwa, String kategoria, double cena, int iloscWMagazynie) {
         this.id = id;
         this.nazwa = nazwa;
         this.kategoria = kategoria;
         this.cena = cena;
         this.iloscWMagazynie = iloscWMagazynie;
-
     }
 
+    public void wyswietlInformacje(){
+        System.out.println(this.id + " " + this.nazwa + " " + this.kategoria + " " + this.cena + " " + this.iloscWMagazynie);
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNazwa() {
+        return nazwa;
+    }
+
+    public void setNazwa(String nazwa) {
+        this.nazwa = nazwa;
+    }
+
+    public String getKategoria() {
+        return kategoria;
+    }
+
+    public void setKategoria(String kategoria) {
+        this.kategoria = kategoria;
+    }
+
+    public double getCena() {
+        return cena;
+    }
+
+    public void setCena(double cena) {
+        this.cena = cena;
+    }
+
+    public int getIloscWMagazynie() {
+        return iloscWMagazynie;
+    }
+
+    public void setIloscWMagazynie(int iloscWMagazynie) {
+        this.iloscWMagazynie = iloscWMagazynie;
+    }
 }

@@ -6,4 +6,7 @@ public class SklepKomputerowy {
     int liczbaKlientow;
     int liczbaZamowien;
 
+    public void dodajProdukt(Produkt produkt){
+
+    }
 }
