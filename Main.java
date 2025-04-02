@@ -52,14 +52,14 @@ public class Main {
         sklep.aktualizujStanMagazynowy(zamowienie1);
 // Wyświetlamy informacje
         System.out.println("Informacje o zamówieniu:");
-        zamowienie1.wyswietlSzczegoly();
+        zamowienie1.wyswietlSzczegóły();
         System.out.println("\nStan magazynowy po zamówieniu:");
         sklep.wyswietlProduktyWKategorii("Laptop");
         sklep.wyswietlProduktyWKategorii("Mysz");
 // Zmiana statusu zamówienia
         sklep.zmienStatusZamowienia(zamowienie1.getId(), "Zrealizowane");
         System.out.println("\nStatus zamówienia po aktualizacji:");
-        zamowienie1.wyswietlSzczegoly();
+        zamowienie1.wyswietlSzczegóły();
 // Dodanie kolejnego zamówienia
         Produkt[] produktyZamowienia2 = {produkt3, produkt2};
         int[] ilosciZamowienia2 = {2, 1};
@@ -70,3 +70,4 @@ public class Main {
         sklep.wyswietlZamowieniaKlienta(1);
     }
 }
+

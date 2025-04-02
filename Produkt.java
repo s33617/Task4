@@ -5,16 +5,9 @@ public class Produkt {
     private double cena; //cena produktu
     private int iloscWMagazynie; //dostepna ilosc produktu w magazynie
 
-    public Produkt(int id, String nazwa, String kategoria, double cena, int iloscWMagazynie) {
-        this.id = id;
-        this.nazwa = nazwa;
-        this.kategoria = kategoria;
-        this.cena = cena;
-        this.iloscWMagazynie = iloscWMagazynie;
-    }
 
     public void wyswietlInformacje(){
-        System.out.println(this.id + " " + this.nazwa + " " + this.kategoria + " " + this.cena + " " + this.iloscWMagazynie);
+        System.out.println(id + " " + nazwa + " " + kategoria + " " + cena + " " + iloscWMagazynie);
     }
 
 

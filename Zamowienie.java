@@ -1,12 +1,35 @@
+import java.util.ArrayList;
+
 public class Zamowienie {
     private int id; //identyfikator zamowienia
     private Klient klient;
     private Produkt[] produkt;
-    private int[] ilosci; // tablica ilosci odpowiadajacych produktom
+    private int[] ilosc; // tablica ilosci odpowiadajacych produktom
     private String dataZamwienia;
     private String status; //Status zamowienia
 
-    public String obliczWartośćZamowienia(){
+    public double obliczWartoscZamowienia(){
+        double suma = 0;
+        for (int i = 0; i < produkt.length; i++) {
+            suma += produkt[i].getCena()*ilosc[i];
+        }
+        return suma;
+    }
+    public void zastosujZnizke(){
+        obliczWartoscZamowienia();
+        if (getKlient().isCzyStaly()){
+            double cenaPoZnizce = obliczWartoscZamowienia()*0.9;
+        }
+    }
+
+    public void wyswietlSzczegóły(){
+        getKlient().wyswietlInformacje();
+        for (int i = 0; i < produkt.length; i++) {
+            getProdukt()[i].wyswietlInformacje();
+        }
+        System.out.println("Data zamówienia: " + dataZamwienia);
+        System.out.println("Status zamówienia: " + status);
+        System.out.println("Wartość całego Zamówienia: " + obliczWartoscZamowienia());
     }
 
     public Klient getKlient() {
@@ -33,12 +56,12 @@ public class Zamowienie {
         this.dataZamwienia = dataZamwienia;
     }
 
-    public int[] getIlosci() {
-        return ilosci;
+    public int[] getIlosc() {
+        return ilosc;
     }
 
-    public void setIlosci(int[] ilosci) {
-        this.ilosci = ilosci;
+    public void setIlosc(int[] ilosci) {
+        this.ilosc = ilosci;
     }
 
     public Produkt[] getProdukt() {
@@ -47,6 +70,14 @@ public class Zamowienie {
 
     public void setProdukt(Produkt[] produkt) {
         this.produkt = produkt;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
 
